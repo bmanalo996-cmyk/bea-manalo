@@ -1,56 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BEA'S PORTFOLIO</title>
-    <script>
-        alert("hey");
-           
-        let firstName = "bea";
-        console.log(typeof firstName);
-        
-        let num = "bea";
-        
-        //first value
-        console.log (firstName);
-        //assignment
-        firstName = 17;
-        console.log (firstName);
-        let result = prompt ("HI","HOWS LIFE?");
-        console.log (result);
-        confirm ("YOU GOOD?");
-      </script>
-      
-      <body>
-        <h1>Bea's Portfolio </h1>
-        <p>I'm bea. im currently studying at ict course </p>
-        
-        <ul>
-          <li<</li><a
-        href="about"onclink='
-        setActive(this;scrollto(about)'>about<a></li>
-        <li><a href="contact"onclink=''
-        setActive(this;scrollto(contact)'>contact<a>
-       </li>
-       <li><a href="projects"onclick='
-  setActive(this; scrollto(projects)'>projects<a
-  ></li>
-  </ul>
-  </nav>
-  </header>
-  <section id="hero">
-   <h1>hi, im bea</h1>
-   <p> ict student</p>
-   
-   <section id="about">
-   <h3> about me</h3>
-   <p> hahaha</p>
-          
-          
-          
-        </ul>
-     
-        
-      </body>
-      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bea Angela | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Replace with your logo image or text -->
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT ME</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#project">PROJECT</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Hi, I'm Bea Angela</h1>
+            <h2>11 Ict <br> Student</h2>
+            <p>Bringing digital visions to life through code and design is what excites me most as a future IT professional.</p>
+            <div class="buttons">
+                <button class="btn primary-btn">View My Work</button>
+                <button class="btn secondary-btn">Get in Touch</button>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="home-image">
+            <img src="Bea.jpg" alt="Bea Angela">
+        </div>
+    </section>
+    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo img {
+    width: 50px; /* Adjust size as needed */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #ff69b4; /* Pink accent */
+}
+
+/* Home Section Styles */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 5%;
+    min-height: 85vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pink circles background */
+.home-section::before, .home-section::after, 
+.home-section .circle-1, .home-section .circle-2 {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 105, 180, 0.3); /* Transparent pink */
+    z-index: -1;
+}
+
+.home-section::before {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -5%;
+}
+
+.home-section::after {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    right: 25%;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    bottom: -10%;
+    right: -5%;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    right: 10%;
+}
+
+.home-content {
+    max-width: 500px;
+}
+
+.home-content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.home-content h2 {
+    font-size: 64px;
+    line-height: 1.2;
+    color: #ff69b4; /* Pink text */
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.primary-btn {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+}
+
+.social-icons a {
+    color: #ff69b4;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.home-image img {
+    width: 450px; /* Adjust size as needed */
+    border-radius: 0; /* Keep original shape */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .home-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image {
+        margin-top: 50px;
+    }
+
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+}
+
+</body>
 </html>
