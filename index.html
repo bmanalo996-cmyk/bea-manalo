@@ -1,207 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bea Angela | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bea's Portfolio</title>
 
-    "link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0d1b2a;
+color:white;
+background-image: ;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#081420;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#00f5d4;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00f5d4;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+height:25vh;
+padding:40px;
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+max-width:1100px;
+width:100%;
+}
+
+.hero-text h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.hero-text p{
+color:#ccc;
+margin-bottom:20px;
+}
+
+.btn{
+background:#00f5d4;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+}
+
+/* HERO IMAGE */
+
+.hero-image img{
+width:260px;
+border-radius:10px;
+}
+
+/* ABOUT */
+
+.about{
+padding:80px 8%;
+text-align:center;
+}
+
+.about h2{
+font-size:32px;
+color:#00f5d4;
+margin-bottom:20px;
+}
+
+.about-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+margin-top:40px;
+}
+
+.about img{
+  height:300px;
+width:220px;
+border-radius:5px;
+border:3px solid #00f5d4;
+}
+
+.about p{
+max-width:500px;
+color:#ccc;
+line-height:1.6;
+    box-shadow: 0 30px 50px green;
+
+}
+.slider{
+  width:900px;
+  height:400px;
+  overflow:hidden;
+}
+
+.slider figure{
+  position:relative;
+  width:200%;
+  margin:0;
+  left:0;
+  display:flex;
+  animation:slide 12s infinite;
+}
+
+.slider img{
+  width:700%;
+  height:300px;
+  object-fit:cover;
+}
+
+@keyframes slide{
+  0%{left:0;}
+  50%{left:0;}
+
+  25%{left:-100%;}
+  45%{left:-100%;}
+
+  50%{left:-200%;}
+  70%{left:-200%;}
+
+  75%{left:-300%;}
+  100%{left:-300%;}
+}
+/* SKILLS */
+
+.skills{
+padding:80px 10%;
+background:#0d1b2a;
+}
+
+.skills h2{
+text-align:center;
+font-size:32px;
+margin-bottom:40px;
+color:#00f5d4;
+}
+
+.skills-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.skill-box{
+flex:1 1 calc(16% - 20px); /* 6 boxes evenly */
+background:#1b263b;
+padding:20px;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+cursor:default;
+}
+
+.skill-box:hover{
+background:#00f5d4;
+color:#0d1b2a;
+transform:translateY(-5px);
+}
+
+.skill-name{
+display:block;
+margin-bottom:10px;
+font-weight:bold;
+color:#00f5d4;
+font-size:18px;
+}
+
+/* SKILL BAR */
+
+.skill-bar{
+width:100%;
+height:10px;
+background:#0d1b2a;
+border-radius:10px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+background:#00f5d4;
+border-radius:10px;
+transition:0.5s;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+.skill-box{
+flex:1 1 calc(30% - 20px);
+}
+}
+
+@media(max-width:600px){
+.skill-box{
+flex:1 1 calc(45% - 20px);
+}
+}
+/* PROJECTS */
+
+.projects{
+padding:50px 5%;
+background:#0d1b2a;
+}
+
+.projects h2{
+text-align:center;
+font-size:32px;
+margin-bottom:70px;
+color:#00f5d4;
+}
+
+/* GRID LAYOUT */
+.project-grid{
+display:grid;
+grid-template-columns: repeat(2, 1fr);
+gap:30px;
+}
+
+/* PROJECT CARD */
+.project-card{
+background:#1b263b;
+padding:45px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+}
+
+.project-card img{
+width:100%;
+max-width:300px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.project-card h3{
+margin-bottom:10px;
+color:#00f5d4;
+}
+
+.project-card p{
+color:#ccc;
+line-height:1.5;
+margin-bottom:15px;
+}
+
+/* BUTTONS */
+.project-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.view-btn{
+background:#00f5d4;
+color:black;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.code-btn{
+border:2px solid #00f5d4;
+color:#00f5d4;
+padding:8px 20px;
+border-radius:20px;
+text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.project-grid{
+grid-template-columns:1fr;
+}
+.project-card img{
+max-width:100%;
+}
+.project-buttons{
+flex-direction:column;
+gap:10px;
+}
+}
+/* MOBILE */
+
+@media(max-width:768px){
+
+.project-box{
+flex-direction:column;
+text-align:center;
+}
+
+.project-img img{
+width:100%;
+}
+
+}
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero-container{
+flex-direction:column;
+text-align:center;
+gap:30px;
+}
+
+.about-container{
+flex-direction:column;
+}
+
+}
+
+
+/* ========== SLIDE ANIMATION ========== */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 9.5px)); }
+}
+
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 600px) {
+    .fantasy-box, .romance-box {
+        height: 250px;
+    }
+
+    .section-text {
+        right: 20px;
+        top: 15px;
+    }
+
+    .romance-text {
+        left: 20px;
+        top: 15px;
+    }
+
+    .section-img, .romance-img {
+        width: 45%;
+    }
+
+    .story-card {
+        min-width: 40%;
+    }
+
+}
+</style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        <div class="nav-links">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT ME</a>
-            <a href="#skills">SKILLS</a>
-            <a href="#project">PROJECT</a>
-        </div>
-    </nav>
 
-    <section id="home" class="home-section">
-        <div class="home-content">
-            <h1>Hi, I'm Bea Angela</h1>
-            <h2>11 Ict <br> Student</h2>
-            <p>Bringing digital visions to life through code and design is what excites me most as a future IT professional.</p>
-            <div class="buttons">
-                <button class="btn primary-btn">View My Work</button>
-                <button class="btn secondary-btn">Get in Touch</button>
-            </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
-        <div class="home-image">
-            <img src="Bea.jpg" alt="Bea Angela">
-        </div>
-    </section>
-    {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+<!-- NAVBAR -->
 
-body {
-    background-color: #000;
-    color: #fff;
-}
+<nav>
+<div class="logo">Bea Angela</div>
 
-/* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-}
+<ul>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#about">About Me</a></li>
+<li><a href="#projects">Projects</a></li>
+</ul>
+</nav>
 
-.logo img {
-    width: 50px; /* Adjust size as needed */
-}
+<!-- HERO -->
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    font-weight: 500;
-}
+<section class="hero">
 
-.nav-links a:hover {
-    color: #ff69b4; /* Pink accent */
-}
+<div class="hero-container">
 
-.home-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 5%;
-    min-height: 85vh;
-    position: relative;
-    overflow: hidden;
-}
+<div class="hero-text">
+<h1>Hi there, I'm Bea</h1>
+<p>and im a ICT student. I chose this strand to enhance my skills in technology and computer systems while developing creativity and problem-solving abilities that will help me in my future career in the ICT field.
+.</p>
+<a href="#" class="btn">Explore My Work</a>
+</div>
 
-.home-section::before, .home-section::after, 
-.home-section .circle-1, .home-section .circle-2 {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 105, 180, 0.3); /* Transparent pink */
-    z-index: -1;
-}
+<div class="hero-image">
+<img src="/916b00d5ed4cd6db0e1ec4c7b379e60a.jpg">
+</div>
 
-.home-section::before {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: -5%;
-}
+</div>
 
-.home-section::after {
-    width: 200px;
-    height: 200px;
-    top: 20%;
-    right: 25%;
-}
+</section>
+<hr>
 
-.circle-1 {
-    width: 400px;
-    height: 400px;
-    bottom: -10%;
-    right: -5%;
-}
+<!-- ABOUT -->
 
-.circle-2 {
-    width: 150px;
-    height: 150px;
-    top: 5%;
-    right: 10%;
-}
+<section class="about" id="about">
 
-.home-content {
-    max-width: 500px;
-}
+<h2>About Me</h2>
 
-.home-content h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #fff;
-}
+<div class="about-container">
 
-.home-content h2 {
-    font-size: 64px;
-    line-height: 1.2;
-    color: #ff69b4; /* Pink text */
-    margin-bottom: 20px;
-}
+<img src="/916b00d5ed4cd6db0e1ec4c7b379e60a.jpg">
+<p>
+I am an ICT student who is eager to learn and improve my knowledge in technology. Even though coding and ICT are not my strongest interests, I chose this field to challenge myself and develop new skills. Through my experiences and projects, I continue to grow and learn more about the world of technology.
+  
+</p>
 
-.home-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
 
-.buttons {
-    margin-bottom: 30px;
-}
+</div>
 
-.btn {
-    padding: 12px 30px;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 15px;
-}
+</section>
+<div class="slider">
+  <figure>
+    <img src="/8e69088f8f6ef8c28b8c66761bd7be53.jpg">
+    <img src="/5e34e5eddd4ffacf18d73b9919fcaf4c.jpg">
+    <img src="/a0ebc09bd5eb10bf2d57ee1329469932.jpg">
+    <img src="/8fc2497aa45de1a9be475fd78d1505ca.jpg">
+  </figure>
+</div>
 
-.primary-btn {
-    background-color: #ff69b4;
-    color: #fff;
-}
 
-.secondary-btn {
-    background-color: transparent;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-}
+<hr>
+<!-- SKILLS -->
+<section class="skills" id="skills">
 
-.social-icons a {
-    color: #ff69b4;
-    font-size: 24px;
-    margin-right: 20px;
-    text-decoration: none;
-}
+<h2>My Skills</h2>
 
-.social-icons a:hover {
-    color: #fff;
-}
+<div class="skills-container">
 
-.home-image img {
-    width: 450px; /* Adjust size as needed */
-    border-radius: 0; /* Keep original shape */
-}
+<div class="skill-box">
+  <span class="skill-name">HTML</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:65%;"></div>
+  </div>
+</div>
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .home-section {
-        flex-direction: column;
-        text-align: center;
-    }
+<div class="skill-box">
+  <span class="skill-name">CSS</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:50%;"></div>
+  </div>
+</div>
 
-    .home-image {
-        margin-top: 50px;
-    }
+<div class="skill-box">
+  <span class="skill-name">JavaScript</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:45%;"></div>
+  </div>
+</div>
 
-    .nav-links a {
-        margin: 0 10px;
-        font-size: 16px;
-    }
-}
+<div class="skill-box">
+  <span class="skill-name">Python</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:5%;"></div>
+  </div>
+</div>
 
+<div class="skill-box">
+  <span class="skill-name">PHP</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:0.6%;"></div>
+  </div>
+</div>
+
+<div class="skill-box">
+  <span class="skill-name">SQL</span>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:0%;"></div>
+  </div>
+</div>
+
+</div>
+
+</section> 
+<hr>
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+<h2>My Projects</h2>
+
+<div class="project-grid">
+
+  <div class="project-card">
+    <img src="/add794922cf6d0bcd4105db5e2e1b3e3.jpg" alt="Project 1">
+    <h3> Performance Task 1</h3>
+    <p>This section contains my projects in Computer Programming that demonstrate my understanding of basic programming concepts and my ability to create simple digital outputs using technology.</p>
+    <div class="project-buttons">
+      <a href="#" class="view-btn">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="/e5e61a18c3c97a40a41dfb0c84bf574b.jpg" alt="Project 2">
+    <h3>Performance Task 2</h3>
+    <p>This section includes another project that shows my improved skills in computer programming and the application of my knowledge in developing digital tasks and outputs.</p>
+    <div class="project-buttons">
+      <a href="#" class="view-btn">View Project</a>
+    </div>
+  </div>
+
+
+  </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+</section>
 </body>
 </html>
